@@ -28,7 +28,7 @@ mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-var port =5000;
+var port = process.env.PORT || 5000;
 
 app.listen (port,function(err){
 
