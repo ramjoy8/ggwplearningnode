@@ -17,11 +17,14 @@ res.json(events)
 
 router.get('/events/:id',(req,res,next)=>{
 
+    console.log(req.params.id);
 var query = { id: req.params.id };
 
-Event.find(query).toArray(function(err, result) {
+Event.find().where("id", req.params.id ).
+exec(function(err, result) {
     res.json(result)
     if (err) throw err;
+    console.log(query)
     console.log(result);
 
 })
