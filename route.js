@@ -13,32 +13,20 @@ res.json(events)
 
 
 })
+;
 
-router.post('/addevent',(req,res,next)=>{
+router.get('/events/:id',(req,res,next)=>{
 
-let newEvent= new Event({
+var query = { id: req.params.id };
 
-    id:req.body.id,
-    name: req.body.name,
-    date: req.body.date,
-    time: req.body.time,
-    price: req.body.price,
-    imageUrl: req.body.imageUrl,
-    location: req.body.location,
-    sessions: req.body.sessions
+Event.find(query).toArray(function(err, result) {
+    res.json(result)
+    if (err) throw err;
+    console.log(result);
+
+})
+;
 
 })
 
-newEvent.save((err,event)=>{
- if(err)
- {
-     res.json({msg:'Failed to add'+err})
- }
- else 
- {
-    res.json({msg:'Add sucess'})
- }
-
-})
-})
 module.exports = router
