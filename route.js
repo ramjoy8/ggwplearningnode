@@ -34,30 +34,5 @@ exec(function(err, result) {
 
 
 
-// router.post('/event/saveevent',(req,res,next)=>{
-//   let newEvent = new Event({
-   
-//    name: req.body.name,
-//    date: req.body.name,
-//    time: req.body.time,
-//    price: req.body.price,
-//    imageUrl: req.body.imageUrl,
-//    location: req.body.location,
-//    sessions:req.body.sessions
-   
-
-
-
-//    })
-//    newEvent.save((err,event)=>{
-
-
-
-//   });
-
-
-
-
-
-//})
+;
 module.exports = router
