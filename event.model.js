@@ -2,8 +2,8 @@ const mongoose =require('mongoose')
 
 const EventSchema = mongoose.Schema({
     
-          id:{ type:Number,
-               required:true},
+          _id:{ type:Number,
+               },
           name: {
               type:String,
               required:true},
@@ -16,12 +16,12 @@ const EventSchema = mongoose.Schema({
           imageUrl: {type:String,
             required:true},
           location: {type:Object,
-            required:true
+            
         },
 
         
-          sessions: {type:Array,
-            required:true}
+          sessions: {type:Array
+            }
 
 
 })
