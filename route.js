@@ -15,12 +15,12 @@ res.json(events)
 })
 ;
 
-router.get('/events/:id',(req,res,next)=>{
+router.get('/events/:_id',(req,res,next)=>{
 
-    console.log(req.params.id);
-var query = { id: req.params.id };
+    console.log(req.params._id);
+var query = { _id: req.params.id };
 
-Event.find().where("id", req.params.id ).
+Event.find().where("_id", req.params._id ).
 exec(function(err, result) {
     res.json(result)
     if (err) throw err;
@@ -48,7 +48,14 @@ router.post('/event/saveevent',(req,res,next)=>{
    
  })
 
- newEvent.save((err,contact)=>{})
+ newEvent.save((err,contact)=>{
+
+    if(err)
+    {
+           res.json({msg:'Failed'})
+
+    }
+ })
 
 
 
