@@ -20,7 +20,7 @@ app.use('/api',route)
 // })
 
 
-//const uri = "mongodb+srv://Ram:ramjoy888.@learning-gng6z.mongodb.net/test?retryWrites=true";
+const uri = "mongodb+srv://Ram:ramjoy888.@learning-gng6z.mongodb.net/test?retryWrites=true";
 const mongoose = require('mongoose');
 let dev_db_url = 'mongodb+srv://Ram:12345@learning-gng6z.mongodb.net/test?retryWrites=true'
 const mongoDB = dev_db_url;
@@ -28,6 +28,16 @@ mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+// var MongoClient = require('mongodb').MongoClient
+
+// MongoClient.connect('mongodb+srv://Ram:12345@learning-gng6z.mongodb.net/test?retryWrites=true', function (err, client) {
+//   if (err) throw err
+//   else console.log('Conne')
+
+  
+//     console.log(err)
+//   })
+
 var port = process.env.PORT || 5000;
 
 app.listen (port,function(err){

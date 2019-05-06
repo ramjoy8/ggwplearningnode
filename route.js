@@ -36,7 +36,7 @@ router.post('/event/saveevent',(req,res,next)=>{
 
  let newEvent=new Event({
 
-    
+   
    name: req.body.name,
    date: req.body.date,
    time: req.body.time,
@@ -48,14 +48,8 @@ router.post('/event/saveevent',(req,res,next)=>{
    
  })
 
- newEvent.save((err,contact)=>{
-
-    if(err)
-    {
-           res.json({msg:'Failed'})
-
-    }
- })
+     newEvent.save(
+ )
 
 
 
