@@ -17,18 +17,13 @@ res.json(events)
 
 router.get('/events/:_id',(req,res,next)=>{
 
-    console.log(req.params._id);
-var query = { _id: req.params.id };
+    Event.findById(req.params._id, function(err, event) {
+        if (err)
+            res.send(err);
+        res.json(event);
+    });
 
-Event.find().where("_id", req.params._id ).
-exec(function(err, result) {
-    res.json(result)
-    if (err) throw err;
-    console.log(query)
-    console.log(result);
 
-})
-;
 
 })
 
