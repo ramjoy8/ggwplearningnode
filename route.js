@@ -29,22 +29,17 @@ router.get('/events/:_id',(req,res,next)=>{
 
 router.post('/event/saveevent',(req,res,next)=>{
 
- let newEvent=new Event({
+ let newEvent=new Event(req.body)
 
-   
-   name: req.body.name,
-   date: req.body.date,
-   time: req.body.time,
-   price: req.body.price,
-   imageUrl: req.body.imageUrl,
-   location: req.body.location,
+     newEvent.save((err,event)=>{
 
- 
-   
- })
+     if(err)
+     res.json({msg:err});
+     else
+     res.json(event)
 
-     newEvent.save(
- )
+
+     })
 
 
 
