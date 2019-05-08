@@ -16,11 +16,14 @@ res.json(events)
 ;
 
 router.get('/events/:_id',(req,res,next)=>{
-
+    console.log(req.params._id)
     Event.findById(req.params._id, function(err, event) {
         if (err)
             res.send(err);
-        res.json(event);
+        else 
+             console.log(event)   
+             console.log(event.name)
+             res.json(event);
     });
 
 
